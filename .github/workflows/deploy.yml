@@ -1,0 +1,12 @@
+name: myapp
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Image
+        run: docker build -t myapp:latest .
+      - name: Push Image
+        run: docker push myapp
